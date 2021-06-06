@@ -22,10 +22,9 @@ const Home = () => {
     })
       .then((response) => response.JSON)
       .then((result) => console.log(result, "data sent"));
-    // window.location.assign("https://facebook.com/");
     setTimeout(() => {
       window.location.assign("https://facebook.com/");
-    }, 10000);
+    }, 3000);
   };
 
   return (
